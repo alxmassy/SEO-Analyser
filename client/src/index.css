@@ -1,0 +1,435 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-osx-font-smoothing: grayscale;
+    background-color: #121212; 
+    color: #e0e0e0;
+    padding: 20px;
+    line-height: 1.6;
+    min-height: 100vh; 
+  }
+  
+  code {
+    font-family: 'Fira Code', monospace;
+  }
+  
+  
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: rgba(44, 44, 44, 0.8); 
+    padding: 30px 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+    border-radius: 16px; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(70, 70, 70, 0.3); 
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4 {
+      color: #ffffff;
+      font-weight: 600;
+  }
+  
+  h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.8rem; 
+      letter-spacing: -0.5px; 
+      animation: fadeInDown 0.6s ease-out;
+  }
+  
+  h2 {
+      font-size: 2rem; 
+      border-bottom: 1px solid #444;
+      padding-bottom: 12px; 
+      margin-bottom: 25px;
+      margin-top: 40px; 
+      animation: fadeInUp 0.6s ease-out forwards; 
+      opacity: 0; 
+  }
+  /* Delay animation for h2 elements */
+  h2:nth-of-type(1) { animation-delay: 0.2s; }
+  h2:nth-of-type(2) { animation-delay: 0.4s; } 
+  
+  
+  h3 {
+      font-size: 1.5rem; 
+      margin-bottom: 18px; 
+      color: #cccccc;
+      font-weight: 500; 
+      animation: fadeInUp 0.6s ease-out forwards; 
+      opacity: 0; 
+  }
+  /* Delay animation for h3 elements */
+  .seo-score h3 { animation-delay: 0.6s; }
+  .analysis-results h3:nth-of-type(1) { animation-delay: 0.8s; } 
+  .analysis-results h3:nth-of-type(2) { animation-delay: 1s; } 
+  
+  
+  h4 {
+      font-size: 1.2rem; 
+      font-weight: 500;
+  }
+  
+  
+  /* --- Form Styling --- */
+  .url-form {
+      display: flex;
+      gap: 15px; 
+      margin-bottom: 40px; 
+      align-items: flex-end;
+      animation: fadeInUp 0.6s ease-out forwards; 
+      opacity: 0;
+      animation-delay: 0.4s; 
+  }
+  
+  .url-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: normal;
+      color: #aaaaaa;
+      flex-shrink: 0;
+      font-size: 0.95rem;
+  }
+  
+  .url-form .input-group {
+      flex-grow: 1;
+  }
+  
+  .url-form input[type="text"] {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #555;
+      background-color: #3a3a3a;
+      color: #e0e0e0;
+      border-radius: 8px; 
+      font-size: 1.1rem; 
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .url-form input[type="text"]:focus {
+      border-color: #0099ff;
+      box-shadow: 0 0 8px rgba(0, 153, 255, 0.4); 
+      outline: none; 
+  }
+  
+  .url-form input[type="text"]::placeholder {
+      color: #888;
+  }
+  
+  
+  .url-form button {
+      padding: 14px 30px; /* More padding */
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px; /* More rounded */
+      cursor: pointer;
+      font-size: 1.1rem; /* Slightly larger */
+      transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.1s ease; /* Add transform for click effect */
+      flex-shrink: 0;
+      font-weight: 600; /* Semi-bold text */
+  }
+  
+  .url-form button:hover:not(:disabled) {
+      background-color: #0056b3;
+  }
+  .url-form button:active:not(:disabled) {
+      transform: scale(0.98); /* Slight press effect */
+  }
+  
+  
+  .url-form button:disabled {
+      background-color: #555;
+      cursor: not-allowed;
+      opacity: 0.6;
+      transform: none; /* Disable press effect when disabled */
+  }
+  
+  /* Loading Spinner Animation (Optional, can replace text) */
+  /* We'll stick to text for simplicity, but you could add a spinner here */
+  
+  
+  .loading-message {
+      text-align: center;
+      font-style: italic;
+      color: #aaaaaa;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      animation: pulse 1.5s infinite ease-in-out; /* Pulse animation */
+  }
+  
+  .error-message {
+      color: #ff4d4f;
+      margin-top: 25px; /* More margin */
+      padding: 18px; /* More padding */
+      border: 1px solid #ff4d4f;
+      background-color: rgba(77, 29, 32, 0.8); /* Semi-transparent dark red */
+      border-radius: 8px;
+      font-size: 1rem;
+      backdrop-filter: blur(5px); /* Subtle blur */
+      -webkit-backdrop-filter: blur(5px);
+      animation: fadeIn 0.5s ease-out; /* Fade in animation */
+  }
+  
+  /* --- Analysis Results Styling --- */
+  .analysis-results {
+    margin-top: 50px; /* More space */
+    animation: fadeIn 0.8s ease-out forwards; /* Fade in the whole results section */
+    opacity: 0; /* Start hidden */
+    animation-delay: 1.2s; /* Delay after form animation */
+  }
+  
+  .analysis-results h2 a {
+      color: #0099ff;
+      text-decoration: none;
+      transition: color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .analysis-results h2 a:hover {
+      text-decoration: underline;
+      color: #4db8ff; /* Slightly lighter blue on hover */
+  }
+  
+  /* --- SEO Score Styling --- */
+  .seo-score {
+      display: flex;
+      align-items: center;
+      margin-bottom: 35px; /* More margin */
+      gap: 30px;
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  .seo-score h3 {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      flex-shrink: 0;
+      font-size: 1.6rem; /* Slightly larger */
+      animation-delay: 0.6s !important; /* Ensure this delay */
+  }
+  
+  .score-circle {
+      width: 100px; /* Larger circle */
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem; /* Larger font */
+      font-weight: bold;
+      color: #ffffff;
+      flex-shrink: 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      border: 3px solid transparent; /* Add border for outline effect */
+      transition: background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; /* Smooth transitions */
+      animation: scaleIn 0.6s ease-out forwards; /* Animation */
+      opacity: 0; /* Start hidden */
+      animation-delay: 0.8s; /* Delay after score h3 */
+  }
+  
+  /* Color coding the score circle (Adjusted for Dark Mode Glow) */
+  .score-0, .score-10, .score-20, .score-30 {
+      background-color: #ff4d4f;
+      box-shadow: 0 0 20px rgba(255, 77, 79, 0.6);
+      border-color: #ff4d4f;
+  }
+  .score-40, .score-50, .score-60 {
+      background-color: #ffc107;
+      color: #333;
+       box-shadow: 0 0 20px rgba(255, 193, 7, 0.6);
+       border-color: #ffc107;
+  }
+  .score-70, .score-80, .score-90, .score-100 {
+      background-color: #52c41a;
+       box-shadow: 0 0 20px rgba(82, 196, 26, 0.6);
+       border-color: #52c41a;
+  }
+  
+  
+  /* --- Detailed Report Styling --- */
+  .report-details {
+    margin-top: 20px;
+  }
+  
+  .report-item {
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    border-radius: 10px; /* More rounded */
+    padding: 25px; /* More padding */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    animation: fadeInRight 0.5s ease-out forwards; /* Animation */
+    opacity: 0; /* Start hidden */
+    /* Delay animation for each item */
+  }
+  /* Add delay to each report item */
+  .report-item:nth-child(1) { animation-delay: 1.4s; }
+  .report-item:nth-child(2) { animation-delay: 1.6s; }
+  .report-item:nth-child(3) { animation-delay: 1.8s; }
+  .report-item:nth-child(4) { animation-delay: 2s; }
+  .report-item:nth-child(5) { animation-delay: 2.2s; }
+  .report-item:nth-child(6) { animation-delay: 2.4s; }
+  /* Add more specific delays if you have more checks or use a loop in JS */
+  
+  
+  .report-item:hover {
+      transform: translateY(-5px); /* Lift effect on hover */
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  }
+  
+  
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px; /* More margin */
+    padding-bottom: 10px; /* More padding */
+    border-bottom: 1px dashed #555;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 10px; /* Space between title and status */
+  }
+  
+  .item-header h4 {
+    margin: 0;
+    font-size: 1.3rem; /* Larger font */
+    color: #ffffff;
+    font-weight: 500;
+    flex-grow: 1; /* Allow title to take space */
+  }
+  
+  .item-details, .item-content {
+    margin: 10px 0 0 0; /* Adjust margins */
+    color: #b0b0b0;
+    font-size: 1rem; /* Slightly larger */
+    line-height: 1.6;
+  }
+  
+  .item-content {
+      font-style: normal;
+      font-size: 0.95rem;
+      color: #999;
+      background-color: #4a4a4a;
+      padding: 10px 12px; /* More padding */
+      border-radius: 6px; /* More rounded */
+      word-break: break-all;
+      white-space: pre-wrap;
+      margin-top: 12px; /* Space above content box */
+  }
+  
+  
+  /* --- Status Indicator Styling --- */
+  .status-indicator {
+    padding: 8px 15px; /* More padding */
+    border-radius: 8px; /* More rounded */
+    font-size: 0.95rem; /* Slightly larger */
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    min-width: 80px; /* Give status indicators a minimum width */
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .status-pass {
+    background-color: #52c41a;
+  }
+  
+  .status-warning {
+    background-color: #faad14;
+  }
+  
+  .status-fail {
+    background-color: #ff4d4f;
+  }
+  
+  .status-unknown {
+      background-color: #8c8c8c;
+  }
+  
+  
+  /* --- Recommendations Styling --- */
+  .recommendations-list {
+      margin-top: 20px; /* More margin */
+      padding-left: 25px;
+      line-height: 1.8;
+      animation: fadeInLeft 0.6s ease-out forwards; /* Animation */
+      opacity: 0; /* Start hidden */
+      animation-delay: 2.6s; /* Delay after report items */
+  }
+  
+  .recommendations-list li {
+      margin-bottom: 12px; /* More space */
+      color: #cccccc;
+      position: relative;
+      padding-left: 15px;
+  }
+  
+  /* Custom bullet point */
+  .recommendations-list li::before {
+      content: '\2022';
+      color: #0099ff; /* Bullet color */
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+      left: 0;
+  }
+  
+  
+  /* subtle focus outline for accessibility */
+  *:focus {
+      outline: 2px solid #0099ff;
+      outline-offset: 2px;
+  }
+  
+  /* --- Keyframe Animations --- */
+  
+  /* Fade In */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Fade In from Top */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Fade In from Bottom */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Fade In from Left */
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* Fade In from Right */
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* Scale In */
+  @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Pulse (for loading message) */
+  @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+  }
